@@ -53,10 +53,12 @@ pub fn on_boot_completed() -> Result<()> {
 }
 
 pub fn on_services() {
-    // let config = config::read_config();
+    let config = config::read_config();
 
     // apply_sus_paths(&config);
     // apply_sus_maps(&config);
+
+    apply_kstat_updates(&config);
 }
 
 fn apply_sus_paths(config: &Data) -> bool {
@@ -146,7 +148,7 @@ pub fn on_post_mount() {
     // apply_sus_paths(&config);
     // apply_sus_maps(&config);
 
-    apply_kstat_updates(&config);
+    // apply_kstat_updates(&config);
 }
 
 fn apply_config(config: &Data) -> bool {
