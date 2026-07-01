@@ -110,7 +110,7 @@ suspend fun isOfficialSignature(): Boolean = withContext(Dispatchers.IO) {
         .add("${getKsuDaemonPath()} debug get-sign ${ksuApp.packageResourcePath}")
         .to(ArrayList<String>(), null).exec().out
     out.firstOrNull()?.trim()
-        .orEmpty() == "size: 0x339, hash: 84d7d685697c2ff0a1c1c089336783323ad9b27e26092d217d57886d4dc1485d"
+        .orEmpty() == "size: 0x2e8, hash: 56508104546c314ab649c3307301f6a6f10f348b841d2d756d858be0b4cb982c"
 }
 
 suspend fun getFeatureStatus(feature: String): String = withContext(Dispatchers.IO) {
